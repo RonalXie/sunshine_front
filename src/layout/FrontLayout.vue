@@ -33,7 +33,7 @@ export default {
   /*margin: 16px 0;*/
   box-shadow: 2px 1px 12px 3px #eee;
   position: fixed;
-  z-index: 1;
+  z-index: 999;
   left: 0;
   right: 0;
   line-height: 64px;

@@ -13,6 +13,12 @@
 body {
     background: #F7F9FA url('@/assets/bg_img.png') repeat!important
 }
+hr {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #EEF2F5;
+    margin:10px 0;
+}
 .box {
     background-color: white;
     border-radius: 6px;
@@ -20,6 +26,7 @@ body {
     color: #4a4a4a;
     display: block;
     padding: 1.25rem;
+    overflow: hidden;
 }
 
 .is-flex{
@@ -48,7 +55,6 @@ is-absolute{
 .ellipsis {
     display: block;
     display: -webkit-box;
-    line-height: 1.4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -1,42 +1,47 @@
 <template>
-    <a-row :gutter="32">
-      <a-col :span="6" v-for="index in 8" :key="index">
-        <div class="box p-0 is-relative" style="overflow: hidden;margin: 16px 0">
+  <div>
+    <div class="box" style="padding: 12px">
+        <a-button shape="round">最近更新</a-button>
+    </div>
+    <a-row :gutter="24">
+      <a-col :span="6" v-for="(item,index) in this.articlePage" :key="index">
+        <div class="box p-0 is-relative" style="overflow: hidden;margin: 12px 0">
           <div class="category-content">
-            后端开发
+            {{item.category.name}}
           </div>
           <div style="width: 100%;height: 200px;overflow: hidden;">
             <router-link to="">
               <img
                   class="image-scale"
-                  src="http://cosy.halo.nicetheme.xyz/upload/kawe-rodrigues-z5k8HD82g9c-unsplash.jpg"
+                  :src="item.cover"
                   style="object-fit: cover;height: 100%;width: 100%"
               />
             </router-link>
           </div>
-          <div style="padding:1.25rem">
-            <router-link to=""><h2 class="ellipsis is-ellipsis-1">这是标题</h2></router-link>
-            <p class="has-text-grey ellipsis is-ellipsis-2" style="height: 45px">
-              这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要
+          <div style="padding:16px">
+            <router-link :to="{path: '/article/'+item.id}" target="_blank"><span style="font-size: large;color: #4a4a4a" class="ellipsis is-ellipsis-1">{{item.title}}</span></router-link>
+
+            <p class="has-text-grey ellipsis is-ellipsis-2" style="height: 40px;font-size: small">
+              {{item.summary}}
             </p>
             <div class="is-flex has-text-grey" style="justify-content: space-between;align-items: center">
-<!--              <div class="is-flex is-align-items-center">-->
-<!--                <div style="width: 32px;height: 32px;border-radius: 50%;overflow: hidden">-->
-<!--                  <img-->
-<!--                      style="object-fit: cover;width: 100%;height: 100%"-->
-<!--                      src="https://cdn.dribbble.com/userupload/6730422/file/original-83442b9b8942f5eb628361c564f2282e.jpg?compress=1&resize=400x300&vertical=top"-->
-<!--                      alt=""-->
-<!--                  />-->
-<!--                </div>-->
-<!--                &nbsp;-->
-                <div style="font-size: small">
-                  <a-icon type="calendar"></a-icon>&nbsp;
-                  2023-06-03
-                </div>
-<!--              </div>-->
+              <!--              <div class="is-flex is-align-items-center">-->
+              <!--                <div style="width: 32px;height: 32px;border-radius: 50%;overflow: hidden">-->
+              <!--                  <img-->
+              <!--                      style="object-fit: cover;width: 100%;height: 100%"-->
+              <!--                      src="https://cdn.dribbble.com/userupload/6730422/file/original-83442b9b8942f5eb628361c564f2282e.jpg?compress=1&resize=400x300&vertical=top"-->
+              <!--                      alt=""-->
+              <!--                  />-->
+              <!--                </div>-->
+              <!--                &nbsp;-->
+              <div style="font-size: small">
+                <a-icon type="calendar"></a-icon>&nbsp;
+                {{item.createTime}}
+              </div>
+              <!--              </div>-->
               <div style="font-size: small">
                 <a-icon type="eye"></a-icon>&nbsp;
-                88
+                {{item.views}}
               </div>
             </div>
           </div>
@@ -44,9 +49,11 @@
         </div>
       </a-col>
     </a-row>
+
+  </div>
 </template>
 <script>
-// import {selectPage} from "@/api/article";
+import {selectPage} from "@/api/article";
 
 export default {
   data() {
@@ -77,14 +84,14 @@ export default {
         return;
       }
       console.log(this.current)
-      // selectPage({
-      //   pageNum: this.current,
-      //   pageSize: 8
-      // }).then(res => {
-      //   this.articlePage.push(...res.data.record.dataList)
-      //   this.total=res.data.record.total
-      //   this.loading = false
-      // })
+      selectPage({
+        pageNum: this.current,
+        pageSize: 8
+      }).then(res => {
+        this.articlePage.push(...res.data.record.dataList)
+        this.total=res.data.record.total
+        this.loading = false
+      })
     }
   },
   created() {
@@ -92,15 +99,15 @@ export default {
     //   this.loading=!this.loading
     // },3000)
     //
-    // selectPage({
-    //   pageNum: 1,
-    //   pageSize: 8,
-    // }).then(res => {
-    //   this.articlePage = res.data.record.dataList
-    //   this.total = res.data.record.total
-    //   this.loading = false
-    //   console.log(this.articlePage[0].tags)
-    // })
+    selectPage({
+      pageNum: 1,
+      pageSize: 8,
+    }).then(res => {
+      this.articlePage = res.data.record.dataList
+      this.total = res.data.record.total
+      this.loading = false
+      console.log(this.articlePage[0].tags)
+    })
   }
 };
 

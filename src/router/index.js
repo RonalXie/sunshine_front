@@ -2,6 +2,12 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import DashBoard from "@/views/admin/DashBoard.vue";
+import ArticleManage from "@/views/admin/ArticleManage.vue";
+import CategoryManage from "@/views/admin/CategoryManage.vue";
+import TagManage from "@/views/admin/TagManage.vue";
+import CreateArtricle from "@/views/admin/CreateArticle.vue";
+import ArticleView from "@/views/ArticleView.vue";
+// import UserCenter from "@/views/admin/UserCenter.vue";
 
 Vue.use(VueRouter)
 
@@ -11,6 +17,12 @@ let routes = [
     name: 'home',
     component: HomeView,
     layout:'front'
+  },
+  {
+    path: '/article/:id',
+    name:'article',
+    component: ArticleView,
+    layout: 'front'
   },
   {
     path: '/about',
@@ -28,7 +40,37 @@ let routes = [
     // which is lazy-loaded when the route is visited.
     component: DashBoard,
     layout: 'admin'
+  },
+  {
+    path: '/manage/article',
+    name:'manageArticle',
+    component: ArticleManage,
+    layout: 'admin'
+  },
+  {
+    path: '/category/manage',
+    name: 'categoryManage',
+    component: CategoryManage,
+    layout: 'admin'
+  },
+  {
+    path: '/tag/manage',
+    name: 'tagManage',
+    component: TagManage,
+    layout: 'admin'
+  },
+  {
+    path: '/create/article',
+    name: 'createArticle',
+    component: CreateArtricle,
+    layout: 'admin'
   }
+  // {
+  //   path: '/user/center',
+  //   name: 'userCenter',
+  //   component: UserCenter,
+  //   layout: 'admin'
+  // },
 ]
 function addLayoutToRoute( route, parentLayout = "empty" )
 {

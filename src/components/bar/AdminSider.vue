@@ -3,7 +3,7 @@
     <div style="padding: 16px;text-align: center">
       <img src="https://bulma.io/images/bulma-logo.png" alt="" height="36px">
     </div>
-    <a-menu mode="inline" :default-selected-keys="['/dashboard']" @click="menuClick" :default-open-keys="['manageArticle','manageUser']" style="height: 1080px;border: none">
+    <a-menu mode="inline" :default-selected-keys="['/dashboard']" @click="menuClick" :default-open-keys="['manageArticle','manageUser']" style="border: none">
       <a-menu-item key="/dashboard">
         <a-icon type="dashboard"/>
         <span>DashBoard</span>

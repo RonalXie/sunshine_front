@@ -2,10 +2,7 @@
   <div class="home">
     <top-content/>
     <br>
-    <div class="box">
-    </div>
     <article-card-list/>
-
 
   </div>
 </template>

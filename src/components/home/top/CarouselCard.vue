@@ -1,17 +1,17 @@
 <template>
   <a-carousel :after-change="onChange" dot-position="right" autoplay>
-    <div v-for="i in 4" :key="i">
+    <div v-for="(item,index) in this.topData" :key="index">
       <router-link to="">
         <div style="position: relative;border-radius: 6px;overflow: hidden">
           <div>
             <img height="350"
                  width="100%"
-                 src="https://pandapro.halo.nicetheme.xyz/upload/img00051.jpg"
+                 :src="item.cover"
                  style="object-fit: cover" alt="">
           </div>
           <div class="box-mask" style="height: 50px"/>
           <div style="position: absolute;bottom: 0;color: #ffffff ;width: 100%;height: 50px;line-height: 50px;">
-            <span style="font-size: large;margin-left: 14px;">标题</span>
+            <span style="font-size: large;margin-left: 14px;">{{item.title}}</span>
           </div>
         </div>
 
@@ -20,7 +20,20 @@
   </a-carousel>
 </template>
 <script>
+import {selectTop} from "@/api/article";
+
 export default {
+  data(){
+    return{
+      topData:[]
+    }
+  },
+
+  created() {
+    selectTop().then((res)=>{
+      this.topData=res.data.record
+    })
+  },
   methods: {
     onChange(a, b, c) {
       console.log(a, b, c);

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-row :gutter="32">
+    <a-row :gutter="24">
       <a-col :span="12">
         <carousel-card/>
       </a-col>
