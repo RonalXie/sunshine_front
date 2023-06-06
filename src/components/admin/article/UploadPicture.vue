@@ -4,7 +4,7 @@
             list-type="picture-card"
             class="avatar-uploader"
             :show-upload-list="false"
-            action="http://localhost:8090/file/upload/cover"
+            action="http://localhost:8090/attachment/upload"
             :before-upload="beforeUpload"
             @change="handleChange"
     >

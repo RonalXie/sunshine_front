@@ -19,14 +19,20 @@
         <a-menu-item key="/tag/manage">
           标签管理
         </a-menu-item>
+        <a-menu-item key="/attachment/manage">
+          附件管理
+        </a-menu-item>
         <a-menu-item key="2">
           评论管理
         </a-menu-item>
       </a-sub-menu>
       <a-sub-menu key="manageUser">
         <span slot="title"><a-icon type="setting"/><span>系统设置</span></span>
-        <a-menu-item key="/user/center">
+        <a-menu-item key="/setting/user">
           个人中心
+        </a-menu-item>
+        <a-menu-item key="/plugin/center">
+          插件
         </a-menu-item>
       </a-sub-menu>
 

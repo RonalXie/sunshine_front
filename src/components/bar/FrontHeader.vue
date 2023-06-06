@@ -7,13 +7,11 @@
       </a-col>
       <a-col :xs="10" :xl="16" :xxl="16">
         <a-menu v-model="current" mode="horizontal" :style="{ lineHeight: '64px'}">
-          <a-menu-item key="mail">
-            <router-link to="/"><span><a-icon type="home"></a-icon>&nbsp;Home</span></router-link>
+          <a-menu-item key="home">
+            <router-link to="/"><span><a-icon type="home"></a-icon>Home</span></router-link>
           </a-menu-item>
-          <a-menu-item key="alipay1">
-            <a href="https://antdv.com" target="_blank" rel="noopener noreferrer"
-            >Navigation Four - Link</a
-            >
+          <a-menu-item key="picture">
+            <router-link to="/"><span><a-icon type="picture"></a-icon>&nbsp;图库</span></router-link>
           </a-menu-item>
         </a-menu>
       </a-col>
@@ -38,7 +36,7 @@
 export default {
   data() {
     return {
-      current: ['mail'],
+      current: ['home'],
     };
   },
 };

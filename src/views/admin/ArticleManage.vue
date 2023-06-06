@@ -1,5 +1,5 @@
 <template>
-  <div class="box" style="height:100%">
+  <div class="box">
     <a-form layout="inline">
       <a-form-item label="标题">
         <a-input placeholder=""/>
@@ -31,11 +31,9 @@
              :rowKey="(record,index)=>{return record.id}"
              :columns="columns"
              :data-source="data"
-             :scroll="{x:400,y:400}"
              :pagination="pageParam"
              @change="handleChange">
       <a slot="name" slot-scope="title">{{ title }}</a>
-      <!--            <p slot="abs" slot-scope="abs">{{ abs }}</p>-->
       <span slot="cover" slot-scope="cover">
                 <img :src="cover" width="120" height="80" style="object-fit: cover"/>
         </span>

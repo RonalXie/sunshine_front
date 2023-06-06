@@ -10,7 +10,7 @@
         </a-form-item>
         <a-form-item label="摘要">
           <a-textarea
-              v-decorator="['summary', { rules: [{ required: true, message: 'Please input your note!' }] }]"
+              v-decorator="['summary', { rules: [{ required: true, message: 'Please input your note!' }],initialValue:this.summary_value }]"
           />
         </a-form-item>
         <a-form-item label="分类">
@@ -33,7 +33,7 @@
           </a-select>
         </a-form-item>
         <a-form-item label="封面">
-          <upload-picture v-decorator="['cover']"/>
+          <upload-picture v-decorator="['coverId']"/>
         </a-form-item>
         <a-form-item label="是否置顶">
           <a-switch
@@ -61,7 +61,8 @@ export default {
       modalVisible: false,
       categoryData:[],
       tagData:[],
-      content:''
+      content:'',
+      summary_value:""
 
     }
   },
@@ -91,6 +92,8 @@ export default {
     getEditorValue(val) {
       this.modalVisible = val.modalVisible
       this.content=val.content
+      this.summary_value = val.content.slice(0, 200);
+
     },
     handleOk() {
 
