@@ -7,3 +7,9 @@ export function login(user){
         data:user,
     })
 }
+export function searchUser(){
+    return request({
+        url:"/user/searchUser",
+        method:"post",
+    })
+}

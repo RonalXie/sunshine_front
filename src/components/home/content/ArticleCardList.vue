@@ -22,7 +22,7 @@
             <div style="padding:16px">
               <p style="font-size: small">
                 <router-link to="" class="has-text-grey" v-for="(tag,i) in item.tags" :key="i">
-                  #{{tag.name}}&nbsp;
+                  <a-badge status="success" :text="tag.name" />&nbsp;
                 </router-link>
               </p>
               <router-link style="color: #4a4a4a" :to="{path: '/article/'+item.id}" target="_blank"><p style="font-size: large;height: 50px" class="card-title ellipsis is-ellipsis-2">{{item.title}}</p></router-link>

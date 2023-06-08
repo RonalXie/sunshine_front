@@ -13,13 +13,13 @@
         <a-menu-item key="/manage/article">
           文章管理
         </a-menu-item>
-        <a-menu-item key="/category/manage">
+        <a-menu-item key="/manage/category">
           分类管理
         </a-menu-item>
-        <a-menu-item key="/tag/manage">
+        <a-menu-item key="/manage/tag">
           标签管理
         </a-menu-item>
-        <a-menu-item key="/attachment/manage">
+        <a-menu-item key="/manage/attachment">
           附件管理
         </a-menu-item>
         <a-menu-item key="2">

@@ -2,14 +2,14 @@
   <div class="box user">
     <div style="text-align: center;position: absolute;bottom: 14px;left: 0;right:0;margin:auto;">
         <a-avatar
-            src="https://cdn.dribbble.com/userupload/6730422/file/original-83442b9b8942f5eb628361c564f2282e.jpg?compress=1&resize=400x300&vertical=top"
+            :src="userInfo.avater"
             alt=""
             :size="108"
         />
       <p class="m-0 p-0" style="font-weight: bold;font-size:large;">
-        RonalXie
+        {{userInfo.nickname}}
       </p>
-      <p class="has-text-grey m-0 p-0">Life is fantastic</p>
+      <p class="has-text-grey m-0 p-0">{{userInfo.intro}}</p>
       <br>
       <div style="font-size: large">
         <span>文章: 18</span>
@@ -25,8 +25,20 @@
 </template>
 
 <script>
+import {searchUser} from "@/api/user";
+
 export default {
-  name: "UserCard"
+  name: "UserCard",
+  data(){
+    return{
+      userInfo:{}
+    }
+  },
+  created() {
+    searchUser().then(res=>{
+      this.userInfo=res.data.record;
+    })
+  }
 }
 </script>
 

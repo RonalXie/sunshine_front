@@ -14,15 +14,19 @@
         </a-col>
       </a-row>
     </div>
-    <div>Footer</div>
+    <br>
+    <div>
+      <footer-bar/>
+    </div>
   </div>
 </template>
 
 <script>
 import FrontHeader from "@/components/bar/FrontHeader.vue";
+import FooterBar from "@/components/bar/FooterBar.vue";
 
 export default {
-  components: {FrontHeader}
+  components: {FooterBar,  FrontHeader}
 
 }
 </script>

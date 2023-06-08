@@ -10,6 +10,8 @@ import ArticleView from "@/views/ArticleView.vue";
 import NotFoundView from "@/views/NotFoundView.vue";
 import LoginView from "@/views/LoginView.vue";
 import UserSetting from "@/views/admin/UserSetting.vue";
+import AttachmentManage from "@/views/admin/AttachmentManage.vue";
+
 // import {message} from "ant-design-vue";
 // import UserCenter from "@/views/admin/UserCenter.vue";
 
@@ -70,7 +72,7 @@ let routes = [
     }
   },
   {
-    path: '/category/manage',
+    path: '/manage/category',
     name: 'categoryManage',
     component: CategoryManage,
     layout: 'admin',
@@ -79,7 +81,7 @@ let routes = [
     }
   },
   {
-    path: '/tag/manage',
+    path: '/manage/tag',
     name: 'tagManage',
     component: TagManage,
     layout: 'admin',
@@ -91,6 +93,15 @@ let routes = [
     path: '/create/article',
     name: 'createArticle',
     component: CreateArtricle,
+    layout: 'admin',
+    meta:{
+      requireAuth:true
+    }
+  },
+  {
+    path: '/manage/attachment',
+    name: 'attachmentManage.vue',
+    component: AttachmentManage,
     layout: 'admin',
     meta:{
       requireAuth:true

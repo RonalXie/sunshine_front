@@ -14,7 +14,6 @@
     </div>
     <a-table :columns="columns" :data-source="this.tagData" :rowKey="(record,index)=>{return record.id}"
              :pagination="pageParam"
-             :scroll="{x:400,y:400}"
              @change="handleChange"
     >
       <a slot="name" slot-scope="name">{{ name }}</a>

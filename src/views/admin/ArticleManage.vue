@@ -59,7 +59,14 @@
       <template slot="action" slot-scope="record">
         <div style="display: flex">
           <a-button type="primary" icon="edit" @click="handleUpdate(record)">编辑</a-button>&nbsp;
-          <a-button type="danger" icon="delete" @click="handleDelete(record)">删除</a-button>
+          <a-popconfirm
+              title="确定要删除吗?"
+              ok-text="删除"
+              cancel-text="取消"
+              @confirm="handleDelete(record)"
+          >
+            <a-button type="danger" icon="delete">删除</a-button>
+          </a-popconfirm>
         </div>
       </template>
 
@@ -68,7 +75,7 @@
 
 </template>
 <script>
-import {deleteArticleBySid, selectArticleById, selectPage} from "@/api/article";
+import {deleteArticle, selectArticleById, selectPage} from "@/api/article";
 
 const columns = [
   {
@@ -193,13 +200,6 @@ export default {
       })
 
     },
-    handleDelete(record) {
-      this.visible = true
-      // eslint-disable-next-line no-unused-vars
-      deleteArticleBySid(record.sid).then((res) => {
-        this.initData()
-      })
-    },
     handleUpdate(record) {
       selectArticleById(record.id).then(res => {
         this.updateData = res.data.record
@@ -209,6 +209,11 @@ export default {
             data: res.data.record
           }
         })
+      })
+    },
+    handleDelete(record){
+      deleteArticle({id:record.id}).then(()=>{
+        this.initData()
       })
     }
   }

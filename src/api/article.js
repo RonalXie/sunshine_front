@@ -36,13 +36,6 @@ export function selectArticleById(id){
     })
 }
 
-export function deleteArticleBySid(sid){
-    return request({
-        url:`/article/delete/${sid}`,
-        method:'post'
-    })
-}
-
 export function  updateArticle(data){
     return request({
         url:'/article/update',
@@ -68,6 +61,13 @@ export function selectRecent(){
         params:{
             sort:'create_time'+' '+'desc'
         }
+    })
+}
+export function deleteArticle(data){
+    return request({
+        url:"/article/delete",
+        method:"post",
+        params:data
     })
 }
 

@@ -12,7 +12,7 @@
     <div style="text-align: right">
       <a-button type="primary" icon="plus" @click="showModal">新建</a-button>
     </div>
-    <a-table :columns="columns" :data-source="categoryData" :scroll="{y:400}">
+    <a-table :columns="columns" :data-source="categoryData" >
       <a slot="name" slot-scope="name">{{ name }}</a>
       <span slot="articleCount" slot-scope="articleCount">
                 {{ articleCount }}
