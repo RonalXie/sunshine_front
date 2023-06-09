@@ -51,9 +51,9 @@ export default {
 }
 
 .user {
-  background: url("https://pandapro.halo.nicetheme.xyz/upload/img00051.jpg") no-repeat;
+  background: url("https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s") no-repeat;
   background-size: 100% 55%;
-  height: 350px;
+  height: 380px;
   position: relative;
 }
 

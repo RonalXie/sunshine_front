@@ -25,11 +25,11 @@
                   <a-badge status="success" :text="tag.name" />&nbsp;
                 </router-link>
               </p>
-              <router-link style="color: #4a4a4a" :to="{path: '/article/'+item.id}" target="_blank"><p style="font-size: large;height: 50px" class="card-title ellipsis is-ellipsis-2">{{item.title}}</p></router-link>
+              <router-link style="color: #4a4a4a" :to="{path: '/article/'+item.id}" target="_blank"><p style="font-size: large;font-weight:bold;height: 50px" class="card-title ellipsis is-ellipsis-2">{{item.title}}</p></router-link>
 
-<!--              <p class="has-text-grey ellipsis is-ellipsis-2" style="height: 40px;font-size: small">-->
-<!--                {{item.summary}}-->
-<!--              </p>-->
+              <p class="has-text-grey ellipsis is-ellipsis-2" style="height: 40px;font-size: small">
+                {{item.summary}}
+              </p>
               <div class="is-flex has-text-grey" style="justify-content: space-between;align-items: center">
                 <!--              <div class="is-flex is-align-items-center">-->
                 <!--                <div style="width: 32px;height: 32px;border-radius: 50%;overflow: hidden">-->

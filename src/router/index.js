@@ -11,6 +11,7 @@ import NotFoundView from "@/views/NotFoundView.vue";
 import LoginView from "@/views/LoginView.vue";
 import UserSetting from "@/views/admin/UserSetting.vue";
 import AttachmentManage from "@/views/admin/AttachmentManage.vue";
+import UpdateArticle from "@/views/admin/UpdateArticle.vue";
 
 // import {message} from "ant-design-vue";
 // import UserCenter from "@/views/admin/UserCenter.vue";
@@ -93,6 +94,15 @@ let routes = [
     path: '/create/article',
     name: 'createArticle',
     component: CreateArtricle,
+    layout: 'admin',
+    meta:{
+      requireAuth:true
+    }
+  },
+  {
+    path: '/update/article',
+    name: 'updateArticle',
+    component: UpdateArticle,
     layout: 'admin',
     meta:{
       requireAuth:true

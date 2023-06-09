@@ -1,18 +1,18 @@
 <template>
   <div>
     <a-row :gutter="24">
-      <a-col :span="12">
+      <a-col :span="16">
         <carousel-card/>
       </a-col>
-      <a-col :span="6">
-        <div style="height: 350px;display: flex;flex-direction: column;justify-content: space-between">
-          <div class="box p-0" style="height: 165px;background-size: cover ;background-image: url('http://cosy.halo.nicetheme.xyz/upload/tommy-bond-YrrIC3N3wvU-unsplash.jpg'">
-          </div>
-          <div class="box p-0" style="height: 165px;background-size: cover ;background-image: url('http://cosy.halo.nicetheme.xyz/upload/kawe-rodrigues-z5k8HD82g9c-unsplash.jpg'">
-          </div>
-        </div>
-      </a-col>
-      <a-col :span="6">
+<!--      <a-col :span="6">-->
+<!--        <div style="height: 350px;display: flex;flex-direction: column;justify-content: space-between">-->
+<!--          <div class="box p-0" style="height: 165px;background-size: cover ;background-image: url('http://cosy.halo.nicetheme.xyz/upload/tommy-bond-YrrIC3N3wvU-unsplash.jpg'">-->
+<!--          </div>-->
+<!--          <div class="box p-0" style="height: 165px;background-size: cover ;background-image: url('http://cosy.halo.nicetheme.xyz/upload/kawe-rodrigues-z5k8HD82g9c-unsplash.jpg'">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </a-col>-->
+      <a-col :span="8">
         <user-card/>
       </a-col>
     </a-row>

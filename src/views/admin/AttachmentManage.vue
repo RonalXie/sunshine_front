@@ -24,7 +24,7 @@
       </a-row>
       <hr>
       <div style="text-align: right">
-        <a-pagination v-model="current" :total="total" @change="handlePageChange" show-less-items/>
+        <a-pagination v-model="current" :total="total" @change="handlePageChange" :defaultPageSize="16" show-less-items/>
       </div>
     </div>
     <!--预览图片-->
@@ -47,7 +47,6 @@
 import {searchPage, upload} from "@/api/attachment";
 import UploadAttachment from "@/components/admin/article/UploadAttachment.vue";
 import {message} from "ant-design-vue";
-import {selectPage} from "@/api/article";
 
 export default {
   components: {
@@ -81,12 +80,11 @@ export default {
     },
     handlePageChange() {
       console.log(this.current)
-      selectPage({
+      searchPage({
         pageNum: this.current,
         pageSize: 16
       }).then(res => {
         this.attachmentList=res.data.record.dataList
-        this.total=res.data.record.total
       })
     },
     handleUpload() {

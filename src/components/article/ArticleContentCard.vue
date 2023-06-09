@@ -91,7 +91,7 @@ export default {
   methods: {
     renderMarkdown(md) {
       Vditor.preview(document.getElementById('preview'), md, {
-        hljs: {style: 'github'}
+        hljs: {style: 'colorful'}
       })
     },
   }

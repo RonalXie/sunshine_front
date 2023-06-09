@@ -12,10 +12,10 @@
     <div style="text-align: right">
       <a-button type="primary" icon="plus" @click="showModal">新建</a-button>
     </div>
-    <a-table :columns="columns" :data-source="categoryData" >
+    <a-table :columns="columns" :data-source="categoryData" :rowKey="(record,index)=>{return record.id}">
       <a slot="name" slot-scope="name">{{ name }}</a>
-      <span slot="articleCount" slot-scope="articleCount">
-                {{ articleCount }}
+      <span slot="count" slot-scope="count">
+                {{ count }}
             </span>
       <span slot="createTime" slot-scope="createTime">
                 {{ createTime }}
@@ -49,9 +49,9 @@ const columns = [
   },
   {
     title: '文章数',
-    dataIndex: 'articleCount',
-    key: 'articleCount',
-    scopedSlots: {customRender: 'articleCount'},
+    dataIndex: 'count',
+    key: 'count',
+    scopedSlots: {customRender: 'count'},
     align: 'center',
 
   },

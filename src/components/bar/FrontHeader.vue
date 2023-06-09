@@ -16,18 +16,12 @@
         </a-menu>
       </a-col>
       <a-col :xs="6" :xl="4" :xxl="4" style="text-align: right">
-        <a-button type="link" icon="search" size="large"/>
-        &nbsp;
-        <a-dropdown :trigger="['contextmenu']">
-          <a-avatar
-              src="https://cdn.dribbble.com/userupload/6730422/file/original-83442b9b8942f5eb628361c564f2282e.jpg?compress=1&resize=400x300&vertical=top"
-              size="large"></a-avatar>
-          <a-menu slot="overlay">
-            <a-menu-item>
-              <router-link to="/login">登录</router-link>
-            </a-menu-item>
-          </a-menu>
-        </a-dropdown>
+        <a-space>
+          <a-icon type="search" :style="{fontSize:'18px'}" />
+          <a-icon type="github" :style="{fontSize:'18px'}" />
+          <router-link to="/login"><a-icon type="user" :style="{fontSize:'18px'}"></a-icon></router-link>
+
+        </a-space>
       </a-col>
     </a-row>
   </div>
@@ -43,6 +37,12 @@ export default {
 </script>
 <style>
 .ant-menu-horizontal {
+  border: none;
+}
+.ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected{
+  border: none;
+}
+.ant-menu-horizontal > .ant-menu-item, .ant-menu-horizontal > .ant-menu-submenu{
   border: none;
 }
 </style>

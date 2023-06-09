@@ -11,7 +11,8 @@
     font-family: nexzhu;
 }
 body {
-    background: #F7F9FA url('@/assets/bg_img.png') repeat!important
+    /*background: #F7F9FA url('@/assets/bg_img.png') repeat!important*/
+    background-color: #f7f7fb;
 }
 hr {
     border-width: 1px;
@@ -22,7 +23,8 @@ hr {
 .box {
     background-color: white;
     border-radius: 6px;
-    box-shadow: 2px 1px 12px 3px #eee;
+    /*box-shadow: 2px 1px 12px 3px #eee;*/
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.02);
     color: #4a4a4a;
     display: block;
     padding: 1.25rem;

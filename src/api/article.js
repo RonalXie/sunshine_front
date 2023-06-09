@@ -35,6 +35,15 @@ export function selectArticleById(id){
         }
     })
 }
+export function searchContent(id){
+    return request({
+        url:"/article/searchContent",
+        method:"post",
+        params:{
+            id:id
+        }
+    })
+}
 
 export function  updateArticle(data){
     return request({

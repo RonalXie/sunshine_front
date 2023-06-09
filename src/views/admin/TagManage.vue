@@ -17,8 +17,8 @@
              @change="handleChange"
     >
       <a slot="name" slot-scope="name">{{ name }}</a>
-      <span slot="articleCount">
-                0
+      <span slot="count" slot-scope="count">
+                {{count}}
             </span>
       <span slot="createTime" slot-scope="createTime">
                 {{ createTime }}
@@ -51,9 +51,9 @@ const columns = [
   },
   {
     title: '文章数',
-    dataIndex: 'articleCount',
-    key: 'articleCount',
-    scopedSlots: {customRender: 'articleCount'},
+    dataIndex: 'count',
+    key: 'count',
+    scopedSlots: {customRender: 'count'},
     align: 'center',
 
   },
@@ -97,6 +97,8 @@ export default {
     }).then(res => {
       this.tagData = res.data.record.dataList
       this.pageParam.total = res.data.record.total
+      console.log(this.tagData,"标签列表")
+
     })
   },
   methods: {
@@ -116,6 +118,7 @@ export default {
         pageNum: pagination.current
       }).then((res) => {
         // this.pageParam.total=res.data.record.total
+
         this.tagData = res.data.record.dataList
       })
 

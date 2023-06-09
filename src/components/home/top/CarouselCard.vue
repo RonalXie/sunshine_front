@@ -5,7 +5,7 @@
         <router-link to="">
           <div style="position: relative;border-radius: 6px;overflow: hidden">
             <div>
-              <img height="350"
+              <img height="380"
                    width="100%"
                    :src="item.cover"
                    style="object-fit: cover" alt="">
@@ -48,7 +48,7 @@ export default {
 <style scoped>
 /* For demo */
 .ant-carousel >>> .slick-slide {
-  height: 350px;
+  height: 380px;
   overflow: hidden;
 }
 
