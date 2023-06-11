@@ -1,7 +1,7 @@
 <template>
   <div>
     <a-row :gutter="24">
-      <a-col :span="16">
+      <a-col :span="17">
         <carousel-card/>
       </a-col>
 <!--      <a-col :span="6">-->
@@ -12,7 +12,7 @@
 <!--          </div>-->
 <!--        </div>-->
 <!--      </a-col>-->
-      <a-col :span="8">
+      <a-col :span="7">
         <user-card/>
       </a-col>
     </a-row>

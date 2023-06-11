@@ -40,6 +40,6 @@ export default {
   z-index: 999;
   left: 0;
   right: 0;
-  line-height: 64px;
+  line-height: 68px;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <a-row :gutter="24">
+  <a-row :gutter="16">
     <a-col :span="4" v-for="(item,index) in this.url" :key="index">
       <router-link to="">
         <div class="box p-0 is-relative" :style="{overflow:'hidden',height: '6rem',backgroundSize:'cover' ,backgroundImage: 'url('+item+')',backgroundColor:'rgba(120, 120, 120, 0.03)'}">

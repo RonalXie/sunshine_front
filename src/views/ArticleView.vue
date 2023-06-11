@@ -7,10 +7,10 @@
 <!--                <left-util-card/>-->
 <!--              </a-affix>-->
 <!--          </a-col>-->
-          <a-col :span="18" >
+          <a-col :span="17" >
               <article-content-card/>
           </a-col>
-          <a-col :span="6" style="position: sticky;top: 76px">
+          <a-col :span="7" style="position: sticky;top: 76px">
 
               <user-card/>
                   <br>

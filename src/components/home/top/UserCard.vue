@@ -51,8 +51,8 @@ export default {
 }
 
 .user {
-  background: url("https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s") no-repeat;
-  background-size: 100% 55%;
+  background: url("@/assets/bg_img.png") no-repeat ;
+  background-size: 100% 60%;
   height: 380px;
   position: relative;
 }

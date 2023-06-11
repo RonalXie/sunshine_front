@@ -1,17 +1,17 @@
 <template>
   <div>
     <a-row>
-      <a-col :xs="8" :xl="4" :xxl="4">
+      <a-col :xs="8" :xl="4" :xxl="3">
         <img src="https://bulma.io/images/bulma-logo.png" height="35" alt=""
         >
       </a-col>
-      <a-col :xs="10" :xl="16" :xxl="16">
-        <a-menu v-model="current" mode="horizontal" :style="{ lineHeight: '64px'}">
+      <a-col :xs="10" :xl="16" :xxl="17">
+        <a-menu v-model="current" mode="horizontal" :style="{ lineHeight: '68px'}">
           <a-menu-item key="home">
-            <router-link to="/"><span><a-icon type="home"></a-icon>Home</span></router-link>
+            <router-link to="/"><span style="font-size: large"><a-icon type="home"></a-icon>Home</span></router-link>
           </a-menu-item>
           <a-menu-item key="picture">
-            <router-link to="/"><span><a-icon type="picture"></a-icon>&nbsp;图库</span></router-link>
+            <router-link to="/"><span style="font-size: large"><a-icon type="picture"></a-icon>&nbsp;图库</span></router-link>
           </a-menu-item>
         </a-menu>
       </a-col>

@@ -2,7 +2,6 @@
 {
     font-family: nexzhu;
     src: url("@/assets/fonts/blockdole.woff2");
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -22,7 +21,7 @@ hr {
 }
 .box {
     background-color: white;
-    border-radius: 6px;
+    border-radius: 8px;
     /*box-shadow: 2px 1px 12px 3px #eee;*/
     box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.02);
     color: #4a4a4a;

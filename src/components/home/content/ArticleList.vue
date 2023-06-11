@@ -4,11 +4,9 @@
       <a-button shape="round">最近更新</a-button>
     </div>
     <a-skeleton :loading="sk_loading" active>
-      <a-row :gutter="24">
-        <a-col :span="24" v-for="(item,index) in this.articlePage" :key="index">
-          <div class="box" style="overflow: hidden;margin: 12px 0">
+          <div class="box" style="overflow: hidden;margin: 12px 0" v-for="(item,index) in this.articlePage" :key="index">
             <a-row :gutter="16" type="flex" align="middle">
-              <a-col :span="8">
+              <a-col :span="7">
                 <div class="is-relative" style="width: 100%">
                   <div class="category-content">
                     {{ item.category.name }}
@@ -24,8 +22,7 @@
                   </div>
                 </div>
               </a-col>
-
-              <a-col :span="16">
+              <a-col :span="17">
                 <div>
                   <div style="margin-bottom: 8px;font-size: small" class="has-text-grey">
                     <router-link to="" class="has-text-grey" v-for="(tag,i) in item.tags" :key="i">
@@ -46,14 +43,14 @@
                   </p>
                   <div class="is-flex has-text-grey" style="justify-content: space-between;align-items: center;font-size: small">
                     <div class="is-flex" style="align-items: center">
-                      <div style="width: 32px;height: 32px;border-radius: 50%;overflow: hidden">
+                      <div style="width: 28px;height: 28px;border-radius: 50%;overflow: hidden">
                         <img
                             style="object-fit: cover;width: 100%;height: 100%"
-                            src="https://cdn.dribbble.com/userupload/6730422/file/original-83442b9b8942f5eb628361c564f2282e.jpg?compress=1&resize=400x300&vertical=top"
+                            src="https://img2.woyaogexing.com/2022/04/17/4f0933042059456ab7a00bc3bf9ce252!400x400.jpeg"
                             alt=""
                         />
                       </div>
-                      &nbsp;
+                      &nbsp;&nbsp;
                       <div>
                         RonalXie
                       </div>
@@ -73,12 +70,8 @@
               </a-col>
             </a-row>
           </div>
-
-
-        </a-col>
-      </a-row>
       <div style="text-align: center">
-        <a-pagination v-model="current" :total="total" :defaultPageSize="8" @change="handlePageChange" show-less-items/>
+        <a-pagination v-model="current" :total="total" @change="handlePageChange" show-less-items/>
       </div>
     </a-skeleton>
 
@@ -114,7 +107,7 @@ export default {
       console.log(this.current)
       selectPage({
         pageNum: this.current,
-        pageSize: 8
+        pageSize: 10
       }).then(res => {
         this.articlePage = res.data.record.dataList
         this.total = res.data.record.total
@@ -129,7 +122,7 @@ export default {
     //
     selectPage({
       pageNum: 1,
-      pageSize: 8,
+      pageSize: 10,
     }).then(res => {
       this.articlePage = res.data.record.dataList
       this.total = res.data.record.total
